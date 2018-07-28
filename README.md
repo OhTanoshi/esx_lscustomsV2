@@ -1,7 +1,7 @@
 Esx_lscustomsV2
 
 
-This added esx support so it now takes players money, and syncs car mods to the databse.
+This is a lscustoms script i came across on a random forum i looked through it and optimised it and added support for esx. and stated adding support for bennys customs cars.
 
 
 You should obviously be running esx if you try using this version.
