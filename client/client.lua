@@ -315,7 +315,7 @@ local function DriveInGarage()
 		
 		if interior then
 			LSCMenu.categories:addSubMenu("INTERIOR", "Interior","Products for maximum style and comfort.", true)
-			--LSCMenu.categories.Interior:addSubMenu("TRIM", "Trim","A selection of interior designs.", true)
+			LSCMenu.categories.Interior:addSubMenu("TRIM", "Trim","A selection of interior designs.", true)
 			AddMod(27, LSCMenu.categories.Interior, "TRIM DESIGN", "Trim Design", "",true)
 			--There are'nt any working natives that could change interior color :(
 			--LSCMenu.categories.Interior.Trim:addSubMenu("TRIM COLOR", "Trim Color","", true)
@@ -424,7 +424,7 @@ local function DriveInGarage()
 					end
 				end
 				scol:addSubMenu("MATTE", "Matte", nil,true)
-				for n, c in pairs(LSC_Config.prices.chrome2.colors) do
+				for n, c in pairs(LSC_Config.prices.matte.colors) do
 					local btn = scol.Matte:addPurchase(c.name,LSC_Config.prices.matte2.price)btn.colorindex = c.colorindex
 					if btn.colorindex == myveh.color[2] then
 						btn.purchased = true
