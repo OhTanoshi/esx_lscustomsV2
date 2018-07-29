@@ -46,14 +46,13 @@ AddEventHandler("LSC:buttonSelected", function(name, button)
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	mymoney = tonumber(button.price)
 	if button.price then -- check if button have price
-		if button.price <= mymoney then
+		if button.price < xPlayer.getMoney() then
 			TriggerClientEvent("LSC:buttonSelected", source,name, button, true)
 			xPlayer.removeMoney(button.price)
 			TriggerClientEvent('LSC:installMod', _source)
 		else
 			TriggerClientEvent("LSC:buttonSelected", source,name, button, false)
 			TriggerClientEvent('LSC:cancelInstallMod', _source)
-			TriggerClientEvent('esx:showNotification(~r~You cant afford this.)')
 		end
 	end
 end)
