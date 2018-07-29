@@ -1,9 +1,3 @@
---[[
-Los Santos Customs V1.1 
-Credits - MythicalBro
-/////License/////
-Do not reupload/re release any part of this script without my permission
-]]
 local colors = {
 {name = "Black", colorindex = 0},{name = "Carbon Black", colorindex = 147},
 {name = "Hraphite", colorindex = 1},{name = "Anhracite Black", colorindex = 11},
