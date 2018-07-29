@@ -52,6 +52,8 @@ AddEventHandler("LSC:buttonSelected", function(name, button)
 			TriggerClientEvent('LSC:installMod', _source)
 		else
 			TriggerClientEvent("LSC:buttonSelected", source,name, button, false)
+			TriggerClientEvent('LSC:cancelInstallMod', _source)
+			TriggerClientEvent('esx:showNotification(~r~You cant afford this.)')
 		end
 	end
 end)

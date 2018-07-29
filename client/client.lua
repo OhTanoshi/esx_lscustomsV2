@@ -139,6 +139,14 @@ local function SetupInsideCam()
 	RenderScriptCams( 1, 0, cam, 0, 0)
 end
 
+
+RegisterNetEvent('LSC:cancelInstallMod')
+AddEventHandler('LSC:cancelInstallMod', function()
+	local vehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
+	ESX.Game.SetVehicleProperties(vehicle, myCar)
+end)
+
+
 --So we can actually enter it?
 local function DriveInGarage()
 
