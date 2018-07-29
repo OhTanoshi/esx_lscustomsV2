@@ -1,3 +1,16 @@
+
+------Model Blacklist--------
+--Does'nt allow specific vehicles to be upgraded
+LSC_Config.ModelBlacklist = {
+	"police",
+}
+
+--Sets if garage will be locked if someone is inside it already
+LSC_Config.lock = false
+
+--Enable/disable old entering way
+LSC_Config.oldenter = false
+
 local colors = {
 {name = "Black", colorindex = 0},{name = "Carbon Black", colorindex = 147},
 {name = "Hraphite", colorindex = 1},{name = "Anhracite Black", colorindex = 11},
@@ -688,19 +701,6 @@ LSC_Config.prices = {
 	}
 	
 }
-
-------Model Blacklist--------
---Does'nt allow specific vehicles to be upgraded
-LSC_Config.ModelBlacklist = {
-	"police",
-}
-
---Sets if garage will be locked if someone is inside it already
-LSC_Config.lock = false
-
---Enable/disable old entering way
-LSC_Config.oldenter = true
-
 --Menu settings
 LSC_Config.menu = {
 
