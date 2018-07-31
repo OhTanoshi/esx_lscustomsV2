@@ -115,7 +115,7 @@ local function AddMod(mod,parent,header,name,info,stock)
 						btn.mod = i
 						price = price + LSC_Config.prices.mods[mod].increaseby
 					else
-						local btn = m:addPurchase("Custom Part",price)
+						local btn = m:addPurchase(mname,price)
 						btn.modtype = mod
 						btn.mod = i
 						price = price + LSC_Config.prices.mods[mod].increaseby
