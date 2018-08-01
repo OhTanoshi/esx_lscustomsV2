@@ -109,7 +109,12 @@ local function AddMod(mod,parent,header,name,info,stock)
 				local lbl = GetModTextLabel(veh,mod,i)
 				if lbl ~= nil then
 					local mname = tostring(GetLabelText(lbl))
-					if mname ~= "NULL" then
+					if mname == "NULL" then
+						local btn = m:addPurchase("Custom Part",price)
+						btn.modtype = mod
+						btn.mod = i
+						price = price + LSC_Config.prices.mods[mod].increaseby
+					else
 						local btn = m:addPurchase(mname,price)
 						btn.modtype = mod
 						btn.mod = i
