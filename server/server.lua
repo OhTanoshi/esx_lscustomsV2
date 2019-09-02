@@ -59,11 +59,27 @@ end)
 
 RegisterServerEvent('LSC:refreshOwnedVehicle')
 AddEventHandler('LSC:refreshOwnedVehicle', function(myCar)
-	MySQL.Async.execute('UPDATE `owned_vehicles` SET `vehicle` = @vehicle WHERE `plate` = @plate',
-	{
-		['@plate']   = myCar.plate,
-		['@vehicle'] = json.encode(myCar)
-	})
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	MySQL.Async.fetchAll('SELECT * FROM owned_vehicles WHERE @plate = plate', {
+        ['@plate'] = myCar.plate
+    }, function(result)
+        if result[1] then
+            local vehicle = json.decode(result[1].vehicle)
+
+            if vehicle.model == myCar.model then
+
+                MySQL.Async.execute('UPDATE `owned_vehicles` SET `vehicle` = @vehicle WHERE `plate` = @plate',
+                    {
+                        ['@plate'] = myCar.plate,
+                        ['@vehicle'] = json.encode(myCar)
+                    })
+
+            else
+				print(('esx_lscustom: %s attempted to upgrade an vehicle with model mismatch!'):format(xPlayer.identifier))
+			end
+        end
+    end)
 end)
 
 RegisterServerEvent("LSC:finished")
